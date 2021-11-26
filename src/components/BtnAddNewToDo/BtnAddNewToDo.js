@@ -11,7 +11,7 @@ const BtnAddNewToDo = () => {
         })
       }
     >
-      Create
+      Create ToDo
     </button>
   );
 };
