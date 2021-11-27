@@ -1,11 +1,10 @@
 import "./App.css";
-import PageToDo from "./components/pageTodo";
+import Navigate from "./components/Navigate";
 function App() {
   return (
     <div className="App">
-      <PageToDo />
+      <Navigate />
     </div>
   );
 }
-
 export default App;

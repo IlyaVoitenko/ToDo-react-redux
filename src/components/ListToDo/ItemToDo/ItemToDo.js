@@ -5,6 +5,7 @@ const ItemToDo = ({
   description,
   timeCompletion,
   category,
+  index,
   isPriority,
 }) => {
   return (
@@ -14,7 +15,14 @@ const ItemToDo = ({
       <th>{timeCompletion}</th>
       <th>{category}</th>
       <th>
-        <BtnPriority />
+        <BtnPriority
+          index={index}
+          nameToDo={nameToDo}
+          description={description}
+          timeCompletion={timeCompletion}
+          category={category}
+          isPriority={isPriority}
+        />
       </th>
     </tr>
   );

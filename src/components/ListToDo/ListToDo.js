@@ -21,6 +21,7 @@ const ListToDo = () => {
           {listToDo.map((item, index) => (
             <ItemToDo
               key={index}
+              index={index}
               nameToDo={item.nameToDo}
               description={item.descriptionToDo}
               timeCompletion={item.timeCompletionToDo}

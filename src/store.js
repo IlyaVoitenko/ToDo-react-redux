@@ -2,6 +2,7 @@ import { createStore } from "redux";
 const initialState = {
   isOpen: false,
   listToDo: [],
+  listPriorityToDo: [],
   nameToDoItem: "",
   categoryToDoItem: "",
   descriptionToDoItem: "",
@@ -16,6 +17,11 @@ const reducer = (state = initialState, action) => {
       return { ...state, isOpen: action.payload };
     case "createToDoItem":
       return { ...state, listToDo: [...state.listToDo, action.payload] };
+    case "addListPriorityToDoItem":
+      return {
+        ...state,
+        listPriorityToDo: [...state.listPriorityToDo, action.payload],
+      };
     case "initialNameToDoItem":
       return { ...state, nameToDoItem: action.payload };
     case "initialCategoryToDoItem":
