@@ -10,3 +10,7 @@ export function getDescriptionToDo(target) {
 export function getCategoryToDo(target) {
   return target.value;
 }
+
+function getValue({ value }) {
+  return value;
+}

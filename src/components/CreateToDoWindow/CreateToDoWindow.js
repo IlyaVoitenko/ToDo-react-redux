@@ -1,19 +1,20 @@
-import React from "react";
-import style from "./css/CreateToDoWindow.module.css";
-import { useDispatch, useSelector } from "react-redux";
-import SelectionsCategories from "./SelectionsCategories";
+import React from 'react';
+import style from './css/CreateToDoWindow.module.css';
+import { useDispatch, useSelector } from 'react-redux';
+import SelectionsCategories from './SelectionsCategories';
 import {
   getNameToDo,
   getTimeCompletionToDo,
   getDescriptionToDo,
-} from "./helpers";
+} from './helpers';
 import {
   getIsPriority,
   getNameToDoItem,
   getCategoryToDoItem,
   getDescriptionToDoItem,
   getTimeCompletionToDoItem,
-} from "./selectors";
+} from './selectors';
+
 const CreateToDoWindow = () => {
   const dispatch = useDispatch();
   const isPriority = useSelector(getIsPriority);
@@ -28,7 +29,7 @@ const CreateToDoWindow = () => {
           className={style.btnClose}
           onClick={() =>
             dispatch({
-              type: "closeWindowCreateToDo",
+              type: 'closeWindowCreateToDo',
               payload: false,
             })
           }
@@ -40,8 +41,8 @@ const CreateToDoWindow = () => {
           placeholder="name of ToDo"
           onChange={({ target }) =>
             dispatch({
-              type: "initialNameToDoItem",
-              payload: getNameToDo(target),
+              type: 'initialNameToDoItem',
+              payload: getNameToDo(target.value),
             })
           }
         ></input>
@@ -49,7 +50,7 @@ const CreateToDoWindow = () => {
           placeholder="time of completion"
           onChange={({ target }) =>
             dispatch({
-              type: "initialTimeCompletionToDoItem",
+              type: 'initialTimeCompletionToDoItem',
               payload: getTimeCompletionToDo(target),
             })
           }
@@ -58,7 +59,7 @@ const CreateToDoWindow = () => {
           placeholder="discription"
           onChange={({ target }) =>
             dispatch({
-              type: "initialDescriptionToDoItem",
+              type: 'initialDescriptionToDoItem',
               payload: getDescriptionToDo(target),
             })
           }
@@ -70,7 +71,7 @@ const CreateToDoWindow = () => {
           className={style.btnCreateToDo}
           onClick={() =>
             dispatch({
-              type: "createToDoItem",
+              type: 'createToDoItem',
               payload: {
                 nameToDo: nameToDoItem,
                 descriptionToDo: descriptionToDoItem,

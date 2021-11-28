@@ -1,8 +1,8 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import style from "./css/ListPriorityToDo.module.css";
+import React from 'react';
+import { useSelector } from 'react-redux';
+import style from './css/ListPriorityToDo.module.css';
 //import { getListToDo } from "../ListToDo/selectors";
-import { getListPriorityToDo } from "./selectors";
+import { getListPriorityToDo } from './selectors';
 const ListPriorityToDo = () => {
   // const listToDo = useSelector(getListToDo);
   const listPriorityToDo = useSelector(getListPriorityToDo);
@@ -18,6 +18,7 @@ const ListPriorityToDo = () => {
       </thead>
       <tbody>
         {listPriorityToDo.map((toDoPriorityItem, index) => {
+          //all element in maps should be inside separate component
           return (
             <tr key={index}>
               <th>{toDoPriorityItem.nameToDo}</th>

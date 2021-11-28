@@ -1,8 +1,9 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import { getListToDo } from "./selectors";
-import ItemToDo from "./ItemToDo";
-import style from "./css/ListToDo.module.css";
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { getListToDo } from './selectors';
+import ItemToDo from './ItemToDo';
+import style from './css/ListToDo.module.css';
+
 const ListToDo = () => {
   const listToDo = useSelector(getListToDo);
   return (

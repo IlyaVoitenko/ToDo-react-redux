@@ -1,0 +1,20 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "nameToDo": "Learn reselect",
+      "descriptionToDo": "it's description",
+      "timeCompletion": "01-02-2021",
+      "category": "work",
+      "isPriority": "true"
+    },
+    {
+      "id": 2,
+      "nameToDo": "Learn mocking data",
+      "descriptionToDo": "it's description of data",
+      "timeCompletion": "01-02-2021",
+      "category": "learning",
+      "isPriority": "false"
+    }
+  ]
+}
