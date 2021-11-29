@@ -1,3 +1,3 @@
-export function getStateWindowCreateToDo(state) {
-  return state.isOpen;
+export function getStateWindowCreateToDo({ isOpen }) {
+  return isOpen;
 }

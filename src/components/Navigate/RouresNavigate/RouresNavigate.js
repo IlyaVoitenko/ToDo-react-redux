@@ -1,12 +1,14 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
-import ListPriorityToDo from "../../ListPriorityToDo";
-import PageToDo from "../../PageToDo";
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import ListPriorityToDo from '../../ListPriorityToDo';
+import PageToDo from '../../PageTodo';
+
+//misspelling
 const RouresNavigate = () => {
   return (
     <Routes>
-      <Route path="/ListPriority" element={<ListPriorityToDo />}></Route>
-      <Route path="/" element={<PageToDo />}></Route>
+      <Route path="/ListPriority" element={<ListPriorityToDo />} />
+      <Route path="/" element={<PageToDo />} />
     </Routes>
   );
 };
