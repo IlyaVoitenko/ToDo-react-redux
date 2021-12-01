@@ -9,7 +9,9 @@ function App() {
   useEffect(() => {
     fetch("http://localhost:3001/todos")
       .then((res) => res.json())
-      .then((data) => dispatch(setTodoList([...data])));
+      .then((data) => {
+        dispatch(setTodoList([...data]));
+      });
   }, [dispatch]);
 
   return (

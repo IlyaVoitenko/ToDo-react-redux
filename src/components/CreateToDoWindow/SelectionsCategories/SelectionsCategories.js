@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { getCategoryToDo } from "../helpers";
+import { getValue } from "../helpers";
 const SelectionsCategories = () => {
   const dispatch = useDispatch();
   return (
@@ -11,7 +11,7 @@ const SelectionsCategories = () => {
         onChange={({ target }) =>
           dispatch({
             type: "initialCategoryToDoItem",
-            payload: getCategoryToDo(target),
+            payload: getValue(target),
           })
         }
       >
@@ -19,6 +19,7 @@ const SelectionsCategories = () => {
         <option value="work">work</option>
         <option value="home">home</option>
         <option value="travel">travel</option>
+        <option value="learning">learning</option>
       </select>
     </label>
   );

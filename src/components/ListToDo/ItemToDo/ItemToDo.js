@@ -24,6 +24,12 @@ const ItemToDo = ({
           isPriority={isPriority}
         />
       </th>
+      <th>
+        <button>&#9998;</button>
+      </th>
+      <th>
+        <button>&#10006;</button>
+      </th>
     </tr>
   );
 };

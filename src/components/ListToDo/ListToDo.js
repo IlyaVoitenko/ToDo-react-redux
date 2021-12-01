@@ -1,23 +1,15 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import { getListToDo } from './selectors';
-import ItemToDo from './ItemToDo';
-import style from './css/ListToDo.module.css';
-
+import React from "react";
+import { useSelector } from "react-redux";
+import { getListToDo } from "./selectors";
+import ItemToDo from "./ItemToDo";
+import style from "./css/ListToDo.module.css";
+import TableHead from "./TableHead";
 const ListToDo = () => {
   const listToDo = useSelector(getListToDo);
   return (
     <div>
       <table className={style.tableToDo}>
-        <thead>
-          <tr>
-            <th>Name todo</th>
-            <th>Description</th>
-            <th> TimeCompletion</th>
-            <th> Category</th>
-            <th> Priority</th>
-          </tr>
-        </thead>
+        <TableHead />
         <tbody>
           {listToDo.map((item, index) => (
             <ItemToDo

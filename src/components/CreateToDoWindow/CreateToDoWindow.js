@@ -2,7 +2,7 @@ import React from "react";
 import style from "./css/CreateToDoWindow.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import SelectionsCategories from "./SelectionsCategories";
-import { getValue } from "./helpers";
+import { getValue, POST } from "./helpers";
 import {
   getIsPriority,
   getNameToDoItem,
@@ -15,7 +15,6 @@ import {
   initialNameToDoItem,
   closeModalCreateToDo,
   initialDescriptionToDoItem,
-  createToDoItem,
 } from "../../store";
 const CreateToDoWindow = () => {
   const dispatch = useDispatch();
@@ -24,6 +23,7 @@ const CreateToDoWindow = () => {
   const categoryToDoItem = useSelector(getCategoryToDoItem);
   const descriptionToDoItem = useSelector(getDescriptionToDoItem);
   const timeCompletionToDoItem = useSelector(getTimeCompletionToDoItem);
+
   return (
     <div className={style.container}>
       <div className={style.modalWindow}>
@@ -58,14 +58,12 @@ const CreateToDoWindow = () => {
         <button
           className={style.btnCreateToDo}
           onClick={() =>
-            dispatch(
-              createToDoItem({
-                nameToDo: nameToDoItem,
-                descriptionToDo: descriptionToDoItem,
-                timeCompletionToDo: timeCompletionToDoItem,
-                category: categoryToDoItem,
-                isPriority: isPriority,
-              })
+            POST(
+              nameToDoItem,
+              descriptionToDoItem,
+              timeCompletionToDoItem,
+              categoryToDoItem,
+              isPriority
             )
           }
         >

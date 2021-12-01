@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import { addListPriorityToDoItem } from "../../../../store";
 const BtnPriority = ({
   nameToDo,
   index,
@@ -11,17 +12,15 @@ const BtnPriority = ({
   return (
     <button
       onClick={() => {
-        dispatch({
-          type: "addListPriorityToDoItem",
-          //добавлять элементы на пряиую
-          payload: {
+        dispatch(
+          addListPriorityToDoItem({
             nameToDo: nameToDo,
             id: index,
             description: description,
             timeCompletion: timeCompletion,
             category: category,
-          },
-        });
+          })
+        );
       }}
     >
       &#9734;
