@@ -3,11 +3,11 @@ import { useDispatch } from "react-redux";
 import "./App.css";
 import Navigate from "./components/Navigate";
 import { setTodoList } from "./store";
-
+import { getFetch } from "./components/API";
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
-    fetch("http://localhost:3001/todos")
+    getFetch()
       .then((res) => res.json())
       .then((data) => {
         dispatch(setTodoList([...data]));

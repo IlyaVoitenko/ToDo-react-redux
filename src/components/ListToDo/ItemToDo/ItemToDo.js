@@ -1,5 +1,6 @@
 import React from "react";
 import BtnPriority from "./BtnPriority";
+import { deleteById } from "../../API";
 const ItemToDo = ({
   nameToDo,
   description,
@@ -30,15 +31,7 @@ const ItemToDo = ({
         <button>&#9998;</button>
       </th>
       <th>
-        <button
-          onClick={() => {
-            fetch(`http://localhost:3001/todos/${id}`, {
-              method: "DELETE",
-            });
-          }}
-        >
-          &#10006;
-        </button>
+        <button onClick={() => deleteById(id)}>&#10006;</button>
       </th>
     </tr>
   );

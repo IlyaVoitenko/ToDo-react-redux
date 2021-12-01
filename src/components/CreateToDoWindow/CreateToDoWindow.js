@@ -2,7 +2,8 @@ import React from "react";
 import style from "./css/CreateToDoWindow.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import SelectionsCategories from "./SelectionsCategories";
-import { getValue, POST } from "./helpers";
+import { getValue } from "./helpers";
+import { POST } from "../API";
 import {
   getIsPriority,
   getNameToDoItem,
