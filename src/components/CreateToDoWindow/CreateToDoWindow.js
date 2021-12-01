@@ -1,20 +1,22 @@
-import React from 'react';
-import style from './css/CreateToDoWindow.module.css';
-import { useDispatch, useSelector } from 'react-redux';
-import SelectionsCategories from './SelectionsCategories';
-import {
-  getNameToDo,
-  getTimeCompletionToDo,
-  getDescriptionToDo,
-} from './helpers';
+import React from "react";
+import style from "./css/CreateToDoWindow.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import SelectionsCategories from "./SelectionsCategories";
+import { getValue } from "./helpers";
 import {
   getIsPriority,
   getNameToDoItem,
   getCategoryToDoItem,
   getDescriptionToDoItem,
   getTimeCompletionToDoItem,
-} from './selectors';
-
+} from "./selectors";
+import {
+  initialTimeCompletionToDoItem,
+  initialNameToDoItem,
+  closeModalCreateToDo,
+  initialDescriptionToDoItem,
+  createToDoItem,
+} from "../../store";
 const CreateToDoWindow = () => {
   const dispatch = useDispatch();
   const isPriority = useSelector(getIsPriority);
@@ -27,12 +29,7 @@ const CreateToDoWindow = () => {
       <div className={style.modalWindow}>
         <button
           className={style.btnClose}
-          onClick={() =>
-            dispatch({
-              type: 'closeWindowCreateToDo',
-              payload: false,
-            })
-          }
+          onClick={() => dispatch(closeModalCreateToDo(false))}
         >
           &#10006;
         </button>
@@ -40,28 +37,19 @@ const CreateToDoWindow = () => {
           className={style.nameToDo}
           placeholder="name of ToDo"
           onChange={({ target }) =>
-            dispatch({
-              type: 'initialNameToDoItem',
-              payload: getNameToDo(target.value),
-            })
+            dispatch(initialNameToDoItem(getValue(target)))
           }
         ></input>
         <input
           placeholder="time of completion"
           onChange={({ target }) =>
-            dispatch({
-              type: 'initialTimeCompletionToDoItem',
-              payload: getTimeCompletionToDo(target),
-            })
+            dispatch(initialTimeCompletionToDoItem(getValue(target)))
           }
         ></input>
         <input
           placeholder="discription"
           onChange={({ target }) =>
-            dispatch({
-              type: 'initialDescriptionToDoItem',
-              payload: getDescriptionToDo(target),
-            })
+            dispatch(initialDescriptionToDoItem(getValue(target)))
           }
         ></input>
         <br />
@@ -70,16 +58,15 @@ const CreateToDoWindow = () => {
         <button
           className={style.btnCreateToDo}
           onClick={() =>
-            dispatch({
-              type: 'createToDoItem',
-              payload: {
+            dispatch(
+              createToDoItem({
                 nameToDo: nameToDoItem,
                 descriptionToDo: descriptionToDoItem,
                 timeCompletionToDo: timeCompletionToDoItem,
                 category: categoryToDoItem,
                 isPriority: isPriority,
-              },
-            })
+              })
+            )
           }
         >
           Create ToDo
