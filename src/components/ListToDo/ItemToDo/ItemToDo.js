@@ -7,7 +7,9 @@ const ItemToDo = ({
   category,
   index,
   isPriority,
+  item,
 }) => {
+  const { id } = item;
   return (
     <tr>
       <th>{nameToDo}</th>
@@ -28,7 +30,15 @@ const ItemToDo = ({
         <button>&#9998;</button>
       </th>
       <th>
-        <button>&#10006;</button>
+        <button
+          onClick={() => {
+            fetch(`http://localhost:3001/todos/${id}`, {
+              method: "DELETE",
+            });
+          }}
+        >
+          &#10006;
+        </button>
       </th>
     </tr>
   );

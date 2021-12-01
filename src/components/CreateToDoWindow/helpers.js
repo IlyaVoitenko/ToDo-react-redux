@@ -9,12 +9,7 @@ export function POST(name, description, timeCompletion, category, priority) {
       category: category,
       isPriority: priority,
     }),
-  })
-    .then((res) => res.json())
-    .then((result) => {
-      console.log(result);
-    })
-    .catch((err) => console.log(`error : ${err}`));
+  }).catch((err) => console.log(`error : ${err}`));
 }
 export function getValue({ value }) {
   return value;

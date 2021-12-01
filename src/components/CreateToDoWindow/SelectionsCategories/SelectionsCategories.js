@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { getValue } from "../helpers";
+import { initialCategoryToDoItem } from "../../../store";
 const SelectionsCategories = () => {
   const dispatch = useDispatch();
   return (
@@ -9,10 +10,7 @@ const SelectionsCategories = () => {
       <br />
       <select
         onChange={({ target }) =>
-          dispatch({
-            type: "initialCategoryToDoItem",
-            payload: getValue(target),
-          })
+          dispatch(initialCategoryToDoItem(getValue(target)))
         }
       >
         <option></option>

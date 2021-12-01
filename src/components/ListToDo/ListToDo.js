@@ -13,6 +13,7 @@ const ListToDo = () => {
         <tbody>
           {listToDo.map((item, index) => (
             <ItemToDo
+              item={item}
               key={index}
               index={index}
               nameToDo={item.nameToDo}
