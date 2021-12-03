@@ -8,6 +8,8 @@ const initialState = {
   descriptionToDoItem: "",
   timeCompletionToDoItem: "",
   isPriority: false,
+  isCheckedPutPost: false,
+  selectedItem: {},
 };
 const OPEN_CREATE_TODO_MODAL = "openWindowCreateToDo";
 const SET_TODO_LIST = "setTodoList";
@@ -18,10 +20,16 @@ const ADD_LIST_PRIORITY_TODO_ITEM = "addListPriorityToDoItem";
 const INITIAL_NAME_TODO_ITEM = "initialNameToDoItem";
 const INITIAL_CATEGORY_TODO_ITEM = "initialCategoryToDoItem";
 const INITIAL_DESCRIPTION_TODO_ITEM = "initialDescriptionToDoItem";
+const IS_CHECKED_PUT_POST = "checkedPutPost";
+const GET_SELECTED_ITEM = "getSelectedItem";
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     // move all action.types to variables
     // and move all dispatch from code to actionCreators
+    case GET_SELECTED_ITEM:
+      return { ...state, selectedItem: action.payload };
+    case IS_CHECKED_PUT_POST:
+      return { ...state, isCheckedPutPost: action.payload };
     case OPEN_CREATE_TODO_MODAL:
       return { ...state, isOpen: action.payload };
     case SET_TODO_LIST: {
@@ -48,6 +56,9 @@ const reducer = (state = initialState, action) => {
       return state;
   }
 };
+export function getSelectedItem(payload) {
+  return { type: GET_SELECTED_ITEM, payload };
+}
 export function initialTimeCompletionToDoItem(payload) {
   return { type: INITIAL_TIME_COMPLETION_TODO_ITEM, payload };
 }
@@ -72,7 +83,9 @@ export function initialDescriptionToDoItem(payload) {
 export function openCreateTodoModal(payload) {
   return { type: OPEN_CREATE_TODO_MODAL, payload };
 }
-
+export function isCheckedPutPost(payload) {
+  return { type: IS_CHECKED_PUT_POST, payload };
+}
 export function setTodoList(payload) {
   return { type: SET_TODO_LIST, payload };
 }

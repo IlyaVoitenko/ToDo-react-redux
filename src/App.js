@@ -7,7 +7,7 @@ import { getFetch } from "./components/API";
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
-    getFetch()
+    getFetch("")
       .then((res) => res.json())
       .then((data) => {
         dispatch(setTodoList([...data]));

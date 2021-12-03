@@ -1,6 +1,9 @@
 export function getNameToDoItem(state) {
   return state.nameToDoItem;
 }
+export function getSelectedItem(state) {
+  return state.selectedItem;
+}
 export function getDescriptionToDoItem(state) {
   return state.descriptionToDoItem;
 }
@@ -12,4 +15,7 @@ export function getIsPriority(state) {
 }
 export function getCategoryToDoItem(state) {
   return state.categoryToDoItem;
+}
+export function isCheckedPutPost(state) {
+  return state.isCheckedPutPost;
 }

@@ -9,12 +9,12 @@
       "isPriority": "true"
     },
     {
-      "id": 2,
-      "nameToDo": "Learn mocking data",
-      "descriptionToDo": "it's description of data",
-      "timeCompletionToDo": "01-02-2021",
-      "category": "learning",
-      "isPriority": "false"
+      "nameToDo": "123333444",
+      "descriptionToDo": "333222444",
+      "timeCompletionToDo": "12333334444",
+      "category": "travel",
+      "isPriority": false,
+      "id": 2
     }
   ]
 }

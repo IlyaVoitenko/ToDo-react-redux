@@ -1,5 +1,11 @@
 import React from "react";
 import BtnPriority from "./BtnPriority";
+import { useDispatch } from "react-redux";
+import {
+  openCreateTodoModal,
+  isCheckedPutPost,
+  getSelectedItem,
+} from "../../../store";
 import { deleteById } from "../../API";
 const ItemToDo = ({
   nameToDo,
@@ -10,6 +16,7 @@ const ItemToDo = ({
   isPriority,
   item,
 }) => {
+  const dispatch = useDispatch();
   const { id } = item;
   return (
     <tr>
@@ -28,10 +35,20 @@ const ItemToDo = ({
         />
       </th>
       <th>
-        <button>&#9998;</button>
+        <button
+          onClick={() => {
+            dispatch(openCreateTodoModal(true));
+            dispatch(isCheckedPutPost(true));
+            dispatch(getSelectedItem({ ...item }));
+          }}
+        >
+          &#9998;
+        </button>
       </th>
       <th>
-        <button onClick={() => deleteById(id)}>&#10006;</button>
+        <button type="submit" onClick={() => deleteById(id)}>
+          &#10006;
+        </button>
       </th>
     </tr>
   );

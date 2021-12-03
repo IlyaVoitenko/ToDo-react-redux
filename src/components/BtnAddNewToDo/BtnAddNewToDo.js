@@ -1,11 +1,16 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { openCreateTodoModal } from "../../store";
+import { openCreateTodoModal, isCheckedPutPost } from "../../store";
 
 const BtnAddNewToDo = () => {
   const dispatch = useDispatch();
   return (
-    <button onClick={() => dispatch(openCreateTodoModal(true))}>
+    <button
+      onClick={() => {
+        dispatch(openCreateTodoModal(true));
+        dispatch(isCheckedPutPost(false));
+      }}
+    >
       Create ToDo Item
     </button>
   );
