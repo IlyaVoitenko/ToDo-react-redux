@@ -1,12 +1,12 @@
-import React from "react";
-import BtnPriority from "./BtnPriority";
-import { useDispatch } from "react-redux";
+import React from 'react';
+import BtnPriority from './BtnPriority';
+import { useDispatch } from 'react-redux';
 import {
   openCreateTodoModal,
   isCheckedPutPost,
   getSelectedItem,
-} from "../../../store";
-import { deleteById } from "../../API";
+} from '../../../store';
+import { deleteById } from '../../API';
 const ItemToDo = ({
   nameToDo,
   description,
@@ -37,6 +37,7 @@ const ItemToDo = ({
       <th>
         <button
           onClick={() => {
+            // try to combine several disptaches in row to one action
             dispatch(openCreateTodoModal(true));
             dispatch(isCheckedPutPost(true));
             dispatch(getSelectedItem({ ...item }));

@@ -1,9 +1,9 @@
-import React from "react";
-import style from "./css/CreateToDoWindow.module.css";
-import { useDispatch, useSelector } from "react-redux";
-import SelectionsCategories from "./SelectionsCategories";
-import { getValue } from "./helpers";
-import { post, put } from "../API";
+import React from 'react';
+import style from './css/CreateToDoWindow.module.css';
+import { useDispatch, useSelector } from 'react-redux';
+import SelectionsCategories from './SelectionsCategories';
+import { getValue } from './helpers';
+import { post, put } from '../API';
 import {
   getIsPriority,
   getNameToDoItem,
@@ -12,24 +12,31 @@ import {
   getSelectedItem,
   getDescriptionToDoItem,
   getTimeCompletionToDoItem,
-} from "./selectors";
+} from './selectors';
 import {
   initialTimeCompletionToDoItem,
   initialNameToDoItem,
   closeModalCreateToDo,
   initialDescriptionToDoItem,
-} from "../../store";
+} from '../../store';
+
 const CreateToDoWindow = () => {
   const dispatch = useDispatch();
   const isPriority = useSelector(getIsPriority);
   const nameToDoItem = useSelector(getNameToDoItem);
   const selectedItem = useSelector(getSelectedItem);
+  //isNewTodo
   const checkedPutOrPost = useSelector(isCheckedPutPost);
   const categoryToDoItem = useSelector(getCategoryToDoItem);
   const descriptionToDoItem = useSelector(getDescriptionToDoItem);
   const timeCompletionToDoItem = useSelector(getTimeCompletionToDoItem);
-  const { id, category, descriptionToDo, nameToDo, timeCompletionToDo } =
-    selectedItem;
+  const {
+    id,
+    category,
+    descriptionToDo,
+    nameToDo,
+    timeCompletionToDo,
+  } = selectedItem;
 
   return (
     <div className={style.container}>
@@ -58,7 +65,7 @@ const CreateToDoWindow = () => {
           ></input>
           <input
             placeholder="discription"
-            defaultValue={checkedPutOrPost ? descriptionToDo : null}
+            value={checkedPutOrPost ? descriptionToDo : null}
             onChange={({ target }) =>
               dispatch(initialDescriptionToDoItem(getValue(target)))
             }
@@ -80,7 +87,7 @@ const CreateToDoWindow = () => {
                   descriptionToDoItem,
                   timeCompletionToDoItem,
                   categoryToDoItem,
-                  isPriority
+                  isPriority,
                 )
               }
             >
@@ -95,7 +102,7 @@ const CreateToDoWindow = () => {
                   descriptionToDoItem,
                   timeCompletionToDoItem,
                   categoryToDoItem,
-                  isPriority
+                  isPriority,
                 )
               }
             >

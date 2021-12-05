@@ -16,6 +16,16 @@ export function getIsPriority(state) {
 export function getCategoryToDoItem(state) {
   return state.categoryToDoItem;
 }
+//think about present id or not
 export function isCheckedPutPost(state) {
   return state.isCheckedPutPost;
 }
+
+// function saveTodo(todo) {
+//   if (todo.id) {
+//     put()
+//   } else {
+//     post()
+//   }
+
+// }

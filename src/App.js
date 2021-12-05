@@ -1,13 +1,14 @@
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import "./App.css";
-import Navigate from "./components/Navigate";
-import { setTodoList } from "./store";
-import { getFetch } from "./components/API";
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import './App.css';
+import Navigate from './components/Navigate';
+import { setTodoList } from './store';
+import { getFetch } from './components/API';
+
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
-    getFetch("")
+    getFetch('')
       .then((res) => res.json())
       .then((data) => {
         dispatch(setTodoList([...data]));
