@@ -1,17 +1,16 @@
-import React from "react";
-import { useDispatch } from "react-redux";
-import { getValue } from "../helpers";
-import { initialCategoryToDoItem } from "../../../store";
-const SelectionsCategories = ({ checkedPutOrPost, defaultCategory }) => {
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { updateSelectedItem } from '../../../store/actionCreators';
+const SelectionsCategories = ({ categoryToDoItem }) => {
   const dispatch = useDispatch();
   return (
     <label>
       you choose a categorie of ToDo :
       <br />
       <select
-        defaultValue={checkedPutOrPost ? defaultCategory : null}
+        value={categoryToDoItem}
         onChange={({ target }) =>
-          dispatch(initialCategoryToDoItem(getValue(target)))
+          dispatch(updateSelectedItem({ categoryToDoItem: target.value }))
         }
       >
         <option></option>

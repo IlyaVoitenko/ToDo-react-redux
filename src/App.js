@@ -2,16 +2,14 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import "./App.css";
 import Navigate from "./components/Navigate";
-import { setTodoList } from "./store";
-import { getFetch } from "./components/API";
+import { setTodoList } from "./store/actionCreators";
+import { getTodos } from "./components/API";
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
-    getFetch("")
-      .then((res) => res.json())
-      .then((data) => {
-        dispatch(setTodoList([...data]));
-      });
+    getTodos().then((res) => {
+      dispatch(setTodoList([...res.data]));
+    });
   }, [dispatch]);
 
   return (

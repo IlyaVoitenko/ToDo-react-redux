@@ -1,9 +1,9 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import CreateToDoWindow from '../CreateToDoWindow';
-import { getStateWindowCreateToDo } from './selector';
-import BtnAddNewToDo from '../BtnAddNewToDo';
-import ListToDo from '../ListToDo';
+import React from "react";
+import { useSelector } from "react-redux";
+import CreateToDoWindow from "../CreateToDoModal";
+import { getStateWindowCreateToDo } from "./selector";
+import BtnAddNewToDo from "../BtnAddNewToDo";
+import ListToDo from "../ListToDo";
 
 const PageToDo = () => {
   const isOpen = useSelector(getStateWindowCreateToDo);

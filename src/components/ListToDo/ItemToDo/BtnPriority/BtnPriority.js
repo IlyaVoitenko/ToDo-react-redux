@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { addListPriorityToDoItem } from "../../../../store";
+import { addListPriorityToDoItem } from "../../../../store/actionCreators";
 const BtnPriority = ({
   nameToDo,
   index,
