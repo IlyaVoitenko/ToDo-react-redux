@@ -1,7 +1,6 @@
 import { postNewTodo, putTodo } from '../API';
 import {
   openCreateTodoModal,
-  isCheckedPutPost,
   updateSelectedItem,
 } from '../../store/actionCreators';
 export function putSelectedItem(
@@ -13,7 +12,6 @@ export function putSelectedItem(
   dispatch
 ) {
   dispatch(openCreateTodoModal(true));
-  dispatch(isCheckedPutPost(true));
   dispatch(
     updateSelectedItem({
       id: id,

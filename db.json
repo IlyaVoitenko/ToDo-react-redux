@@ -9,12 +9,28 @@
       "isPriority": "true"
     },
     {
-      "nameToDo": "1rrnamefff",
-      "descriptionToDo": "1rrtimeffff",
-      "timeCompletionToDo": "1rrdisffff",
-      "category": "learning",
+      "nameToDo": "1",
+      "descriptionToDo": "1",
+      "timeCompletionToDo": "1",
+      "category": "travel",
       "isPriority": false,
       "id": 2
+    },
+    {
+      "nameToDo": "5",
+      "descriptionToDo": "5",
+      "timeCompletionToDo": "5",
+      "category": "home",
+      "isPriority": false,
+      "id": 3
+    },
+    {
+      "nameToDo": "111",
+      "descriptionToDo": "2222",
+      "timeCompletionToDo": "3333",
+      "category": "home",
+      "isPriority": false,
+      "id": 4
     }
   ]
 }
