@@ -4,17 +4,33 @@
       "id": 1,
       "nameToDo": "Learn reselect",
       "descriptionToDo": "it's description",
-      "timeCompletion": "01-02-2021",
+      "timeCompletionToDo": "01-02-2021",
       "category": "work",
       "isPriority": "true"
     },
     {
-      "id": 2,
-      "nameToDo": "Learn mocking data",
-      "descriptionToDo": "it's description of data",
-      "timeCompletion": "01-02-2021",
-      "category": "learning",
-      "isPriority": "false"
+      "nameToDo": "1",
+      "descriptionToDo": "1",
+      "timeCompletionToDo": "1",
+      "category": "travel",
+      "isPriority": false,
+      "id": 2
+    },
+    {
+      "nameToDo": "5",
+      "descriptionToDo": "5",
+      "timeCompletionToDo": "5",
+      "category": "home",
+      "isPriority": false,
+      "id": 3
+    },
+    {
+      "nameToDo": "111",
+      "descriptionToDo": "2222",
+      "timeCompletionToDo": "3333",
+      "category": "home",
+      "isPriority": false,
+      "id": 4
     }
   ]
 }

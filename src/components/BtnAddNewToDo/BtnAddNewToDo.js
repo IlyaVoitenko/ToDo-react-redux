@@ -1,12 +1,12 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { openCreateTodoModal } from '../../store';
+import { openCreateTodoModal } from '../../store/actionCreators';
 
 const BtnAddNewToDo = () => {
   const dispatch = useDispatch();
   return (
     <button onClick={() => dispatch(openCreateTodoModal(true))}>
-      Create ToDo
+      Create ToDo Item
     </button>
   );
 };

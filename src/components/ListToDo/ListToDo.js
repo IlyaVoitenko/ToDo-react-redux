@@ -3,32 +3,16 @@ import { useSelector } from 'react-redux';
 import { getListToDo } from './selectors';
 import ItemToDo from './ItemToDo';
 import style from './css/ListToDo.module.css';
-
+import TableHead from './TableHead';
 const ListToDo = () => {
   const listToDo = useSelector(getListToDo);
   return (
     <div>
       <table className={style.tableToDo}>
-        <thead>
-          <tr>
-            <th>Name todo</th>
-            <th>Description</th>
-            <th> TimeCompletion</th>
-            <th> Category</th>
-            <th> Priority</th>
-          </tr>
-        </thead>
+        <TableHead />
         <tbody>
           {listToDo.map((item, index) => (
-            <ItemToDo
-              key={index}
-              index={index}
-              nameToDo={item.nameToDo}
-              description={item.descriptionToDo}
-              timeCompletion={item.timeCompletionToDo}
-              category={item.category}
-              isPriority={item.isPriority}
-            />
+            <ItemToDo item={item} key={index} index={index} />
           ))}
         </tbody>
       </table>
