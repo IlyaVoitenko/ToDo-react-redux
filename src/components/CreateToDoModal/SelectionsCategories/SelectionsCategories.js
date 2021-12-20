@@ -3,6 +3,8 @@ import { useDispatch } from 'react-redux';
 import { updateSelectedItem } from '../../../store/actionCreators';
 const SelectionsCategories = ({ categoryToDoItem }) => {
   const dispatch = useDispatch();
+  //options to array of options
+  let options = ['work', 'home', 'travel', 'learning'];
   return (
     <label>
       you choose a categorie of ToDo :
@@ -13,11 +15,13 @@ const SelectionsCategories = ({ categoryToDoItem }) => {
           dispatch(updateSelectedItem({ categoryToDoItem: target.value }))
         }
       >
-        <option></option>
-        <option value="work">work</option>
-        <option value="home">home</option>
-        <option value="travel">travel</option>
-        <option value="learning">learning</option>
+        {options.map((option, index) => {
+          return (
+            <option key={index} value={option}>
+              {option}
+            </option>
+          );
+        })}
       </select>
     </label>
   );

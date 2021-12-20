@@ -10,6 +10,7 @@ const ListPriorityToDo = () => {
       <TableHead />
       <tbody>
         {listPriorityToDo.map((toDoPriorityItem, index) => {
+          //use id element without index
           return (
             <tr key={index}>
               <th>{toDoPriorityItem.nameToDo}</th>

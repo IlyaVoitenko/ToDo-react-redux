@@ -32,6 +32,7 @@ const ItemToDo = ({ index, item }) => {
       <th>
         <button
           onClick={() =>
+            //movie to funck
             putSelectedItem(
               id,
               nameToDo,

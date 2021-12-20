@@ -5,6 +5,7 @@ import {
   ADD_LIST_PRIORITY_TODO,
   OPEN_CREATE_TODO_MODAL,
   SET_TODO_LIST,
+  UPDATE_LIST_TODO,
 } from './actionTypes';
 const initialState = {
   isOpen: false,
@@ -40,6 +41,8 @@ const reducer = (state = initialState, action) => {
     case SET_TODO_LIST: {
       return { ...state, listToDo: action.payload };
     }
+    case UPDATE_LIST_TODO:
+      return { ...state, listToDo: [...state.listToDo, action.payload] };
     default:
       return state;
   }

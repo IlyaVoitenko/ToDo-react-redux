@@ -6,3 +6,4 @@ export const IS_CHECKED_PUT_POST = 'checkedPutPost';
 export const UPDATE_SELECTED = 'updateSelectedItem';
 export const SET_TODO_LIST = 'setTodoList';
 export const EDIT_SELECTED_TODO = 'editSelectedTodo';
+export const UPDATE_LIST_TODO = 'updateToDoList ';

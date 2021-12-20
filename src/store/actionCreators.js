@@ -1,4 +1,5 @@
 import {
+  UPDATE_LIST_TODO,
   UPDATE_SELECTED,
   CLOSE_MODAL_CREATE_TODO,
   CREATE_TODO,
@@ -27,4 +28,7 @@ export function openCreateTodoModal(payload) {
 }
 export function setTodoList(payload) {
   return { type: SET_TODO_LIST, payload };
+}
+export function updateToDoList(payload) {
+  return { type: UPDATE_LIST_TODO, payload };
 }

@@ -21,48 +21,46 @@ const CreateToDoModal = () => {
     categoryToDoItem,
   } = selectedItem;
   return (
-    <form>
-      <div className={style.container}>
-        <div className={style.modalWindow}>
-          <button
-            className={style.btnClose}
-            onClick={() => dispatch(closeModalCreateToDo(false))}
-          >
-            &#10006;
-          </button>
-          <input
-            className={style.nameToDo}
-            value={nameToDoItem}
-            placeholder="name of ToDo"
-            onChange={({ target }) => {
-              dispatch(updateSelectedItem({ nameToDoItem: target.value }));
-            }}
-          ></input>
-          <input
-            value={timeCompletionToDoItem}
-            placeholder="time of completion"
-            onChange={({ target }) =>
-              dispatch(
-                updateSelectedItem({ timeCompletionToDoItem: target.value })
-              )
-            }
-          ></input>
-          <input
-            value={descriptionToDoItem}
-            placeholder="discription"
-            onChange={({ target }) =>
-              dispatch(
-                updateSelectedItem({ descriptionToDoItem: target.value })
-              )
-            }
-          ></input>
-          <br />
-          <SelectionsCategories categoryToDoItem={categoryToDoItem} />
-          <br />
-          <button
-            type="submit"
-            className={style.btnCreateToDo}
-            onClick={() =>
+    <div className={style.container}>
+      <div className={style.modalWindow}>
+        <button
+          className={style.btnClose}
+          onClick={() => dispatch(closeModalCreateToDo(false))}
+        >
+          &#10006;
+        </button>
+        <input
+          className={style.nameToDo}
+          value={nameToDoItem}
+          placeholder="name of ToDo"
+          onChange={({ target }) => {
+            dispatch(updateSelectedItem({ nameToDoItem: target.value }));
+          }}
+        ></input>
+        <input
+          value={timeCompletionToDoItem}
+          placeholder="time of completion"
+          onChange={({ target }) =>
+            dispatch(
+              updateSelectedItem({ timeCompletionToDoItem: target.value })
+            )
+          }
+        ></input>
+        <input
+          value={descriptionToDoItem}
+          placeholder="discription"
+          onChange={({ target }) =>
+            dispatch(updateSelectedItem({ descriptionToDoItem: target.value }))
+          }
+        ></input>
+        <br />
+        <SelectionsCategories categoryToDoItem={categoryToDoItem} />
+        <br />
+        <button
+          type="submit"
+          className={style.btnCreateToDo}
+          onClick={() =>
+            dispatch(
               saveTodo(
                 id,
                 nameToDoItem,
@@ -71,13 +69,13 @@ const CreateToDoModal = () => {
                 categoryToDoItem,
                 isPriority
               )
-            }
-          >
-            Create ToDo
-          </button>
-        </div>
+            )
+          }
+        >
+          Create ToDo
+        </button>
       </div>
-    </form>
+    </div>
   );
 };
 export default CreateToDoModal;
