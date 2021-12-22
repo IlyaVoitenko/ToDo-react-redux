@@ -1,8 +1,8 @@
-import { postNewTodo, putTodo } from '../API';
+import { postNewTodo, putTodo } from '../../API';
 import {
   openCreateTodoModal,
   updateSelectedItem,
-} from '../../store/actionCreators';
+} from '../../../store/actionCreators';
 export function putSelectedItem(
   id,
   nameToDo,

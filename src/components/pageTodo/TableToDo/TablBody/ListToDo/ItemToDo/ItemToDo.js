@@ -1,8 +1,8 @@
 import React from 'react';
 import BtnPriority from './BtnPriority';
 import { useDispatch } from 'react-redux';
-import { putSelectedItem } from '../../CreateToDoModal/helper';
-import { deleteTodo } from '../../API';
+import { putSelectedItem } from '../../../../CreateToDoModal/helper';
+import { deleteTodo } from '../../../../../API';
 const ItemToDo = ({ index, item }) => {
   const dispatch = useDispatch();
   const {

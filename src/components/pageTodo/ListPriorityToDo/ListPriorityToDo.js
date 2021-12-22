@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import style from './css/ListPriorityToDo.module.css';
-import TableHead from '../ListToDo/TableHead';
+import TableHead from '../TableToDo/TableHead';
 import { getListPriorityToDo } from './selectors';
 const ListPriorityToDo = () => {
   const listPriorityToDo = useSelector(getListPriorityToDo);

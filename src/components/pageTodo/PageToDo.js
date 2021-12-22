@@ -1,18 +1,17 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import CreateToDoWindow from "../CreateToDoModal";
-import { getStateWindowCreateToDo } from "./selector";
-import BtnAddNewToDo from "../BtnAddNewToDo";
-import ListToDo from "../ListToDo";
-
+import React, { Fragment } from 'react';
+import { useSelector } from 'react-redux';
+import CreateToDoWindow from './CreateToDoModal';
+import { getStateWindowCreateToDo } from './selector';
+import BtnAddNewToDo from '../PageTodo/BtnAddNewToDo';
+import TableToDo from './TableToDo';
 const PageToDo = () => {
   const isOpen = useSelector(getStateWindowCreateToDo);
   return (
-    <div>
+    <Fragment>
       <BtnAddNewToDo />
       {isOpen ? <CreateToDoWindow /> : null}
-      <ListToDo />
-    </div>
+      <TableToDo />
+    </Fragment>
   );
 };
 export default PageToDo;

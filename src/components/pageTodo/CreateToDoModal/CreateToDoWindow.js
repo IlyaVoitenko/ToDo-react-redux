@@ -1,4 +1,4 @@
-import { React } from 'react';
+import { Fragment, React } from 'react';
 import style from './css/CreateToDoWindow.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import SelectionsCategories from './SelectionsCategories';
@@ -7,7 +7,7 @@ import { getIsPriority, getSelectedItem } from './selectors';
 import {
   updateSelectedItem,
   closeModalCreateToDo,
-} from '../../store/actionCreators';
+} from '../../../store/actionCreators';
 
 const CreateToDoModal = () => {
   const dispatch = useDispatch();

@@ -12,15 +12,15 @@
       "nameToDo": "1333",
       "descriptionToDo": "1333",
       "timeCompletionToDo": "1333",
-      "category": "learning",
+      "category": "home",
       "isPriority": false,
       "id": 2
     },
     {
-      "nameToDo": "2уу",
-      "descriptionToDo": "12",
-      "timeCompletionToDo": "12",
-      "category": "travel",
+      "nameToDo": "1",
+      "descriptionToDo": "1",
+      "timeCompletionToDo": "1",
+      "category": "home",
       "isPriority": false,
       "id": 3
     }

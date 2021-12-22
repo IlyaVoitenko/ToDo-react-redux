@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { updateSelectedItem } from '../../../store/actionCreators';
+import { updateSelectedItem } from '../../../../store/actionCreators';
 const SelectionsCategories = ({ categoryToDoItem }) => {
   const dispatch = useDispatch();
   //options to array of options
