@@ -1,28 +1,12 @@
 {
   "todos": [
     {
-      "nameToDo": "Learn reselect",
-      "descriptionToDo": "01-02-2022",
-      "timeCompletionToDo": "it's description",
-      "category": "learning",
+      "nameToDo": "rr",
+      "descriptionToDo": "rr",
+      "timeCompletionToDo": "rrr",
+      "category": "travel",
       "isPriority": false,
       "id": 1
-    },
-    {
-      "nameToDo": "1333",
-      "descriptionToDo": "1333",
-      "timeCompletionToDo": "1333",
-      "category": "home",
-      "isPriority": false,
-      "id": 2
-    },
-    {
-      "nameToDo": "1",
-      "descriptionToDo": "1",
-      "timeCompletionToDo": "1",
-      "category": "home",
-      "isPriority": false,
-      "id": 3
     }
   ]
 }

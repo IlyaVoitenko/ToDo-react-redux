@@ -1,4 +1,4 @@
-import { Fragment, React } from 'react';
+import { React } from 'react';
 import style from './css/CreateToDoWindow.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import SelectionsCategories from './SelectionsCategories';
@@ -13,6 +13,26 @@ const CreateToDoModal = () => {
   const dispatch = useDispatch();
   const isPriority = useSelector(getIsPriority);
   const selectedItem = useSelector(getSelectedItem);
+  function addOrUpdateToDo() {
+    dispatch(
+      saveTodo(
+        id,
+        nameToDoItem,
+        timeCompletionToDoItem,
+        descriptionToDoItem,
+        categoryToDoItem,
+        isPriority
+      )
+    );
+    dispatch(closeModalCreateToDo(false));
+    dispatch(
+      updateSelectedItem({
+        nameToDoItem: '',
+        timeCompletionToDoItem: '',
+        descriptionToDoItem: '',
+      })
+    );
+  }
   const {
     id,
     nameToDoItem,
@@ -59,18 +79,7 @@ const CreateToDoModal = () => {
         <button
           type="submit"
           className={style.btnCreateToDo}
-          onClick={() =>
-            dispatch(
-              saveTodo(
-                id,
-                nameToDoItem,
-                timeCompletionToDoItem,
-                descriptionToDoItem,
-                categoryToDoItem,
-                isPriority
-              )
-            )
-          }
+          onClick={() => addOrUpdateToDo()}
         >
           Create ToDo
         </button>

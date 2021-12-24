@@ -1,9 +1,9 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { addListPriorityToDoItem } from '../../../../../../../store/actionCreators';
+import { putTodo } from '../../../../../../API';
 const BtnPriority = ({
   nameToDo,
-  index,
+  id,
   description,
   timeCompletion,
   category,
@@ -13,13 +13,7 @@ const BtnPriority = ({
     <button
       onClick={() => {
         dispatch(
-          addListPriorityToDoItem({
-            nameToDo: nameToDo,
-            id: index,
-            description: description,
-            timeCompletion: timeCompletion,
-            category: category,
-          })
+          putTodo(id, nameToDo, description, timeCompletion, category, true)
         );
       }}
     >

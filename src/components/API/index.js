@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { setTodoList, updateToDoList } from '../../store/actionCreators';
+
 const baseURL = `http://localhost:3001/todos`;
 export function getTodos() {
   return function (dispatch) {
@@ -8,7 +9,6 @@ export function getTodos() {
     });
   };
 }
-
 export function putTodo(
   id,
   name,
@@ -26,7 +26,7 @@ export function putTodo(
         category: category,
         isPriority: priority,
       })
-      .then((res) => console.log('put :', res))
+      .then(() => dispatch(getTodos()))
       .catch((err) => console.log(`error : ${err}`));
   };
 }
@@ -38,7 +38,6 @@ export function postNewTodo(
   priority
 ) {
   return function (dispatch) {
-    console.log('dispatch');
     axios
       .post(`${baseURL}`, {
         nameToDo: name,
@@ -47,9 +46,7 @@ export function postNewTodo(
         category: category,
         isPriority: priority,
       })
-      //update list todo
       .then((res) => {
-        console.log('res :', res);
         dispatch(updateToDoList({ ...res.data }));
       })
       .catch((err) => console.log(`error : ${err}`));
@@ -57,7 +54,5 @@ export function postNewTodo(
 }
 
 export function deleteTodo(id) {
-  return axios
-    .delete(`http://localhost:3001/todos/${id}`)
-    .then((res) => console.log(res));
+  return axios.delete(`http://localhost:3001/todos/${id}`);
 }

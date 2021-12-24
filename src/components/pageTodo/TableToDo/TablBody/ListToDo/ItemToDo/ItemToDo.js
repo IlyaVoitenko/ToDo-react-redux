@@ -1,10 +1,27 @@
 import React from 'react';
 import BtnPriority from './BtnPriority';
 import { useDispatch } from 'react-redux';
-import { putSelectedItem } from '../../../../CreateToDoModal/helper';
 import { deleteTodo } from '../../../../../API';
-const ItemToDo = ({ index, item }) => {
+import {
+  openCreateTodoModal,
+  updateSelectedItem,
+} from '../../../../../../store/actionCreators';
+const ItemToDo = ({ item }) => {
   const dispatch = useDispatch();
+
+  function editToDo() {
+    dispatch(openCreateTodoModal(true));
+    dispatch(
+      updateSelectedItem({
+        id: id,
+        nameToDoItem: nameToDo,
+        categoryToDoItem: category,
+        descriptionToDoItem: descriptionToDo,
+        timeCompletionToDoItem: timeCompletionToDo,
+        isPriority: isPriority,
+      })
+    );
+  }
   const {
     id,
     isPriority,
@@ -13,6 +30,7 @@ const ItemToDo = ({ index, item }) => {
     descriptionToDo,
     nameToDo,
   } = item;
+
   return (
     <tr>
       <th>{nameToDo}</th>
@@ -21,7 +39,7 @@ const ItemToDo = ({ index, item }) => {
       <th>{category}</th>
       <th>
         <BtnPriority
-          index={index}
+          id={id}
           nameToDo={nameToDo}
           description={descriptionToDo}
           timeCompletion={timeCompletionToDo}
@@ -30,21 +48,7 @@ const ItemToDo = ({ index, item }) => {
         />
       </th>
       <th>
-        <button
-          onClick={() =>
-            //movie to funck
-            putSelectedItem(
-              id,
-              nameToDo,
-              category,
-              descriptionToDo,
-              timeCompletionToDo,
-              dispatch
-            )
-          }
-        >
-          &#9998;
-        </button>
+        <button onClick={() => editToDo()}>&#9998;</button>
       </th>
       <th>
         <form>

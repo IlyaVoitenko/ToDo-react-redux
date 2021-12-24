@@ -1,3 +1,3 @@
 export function getListPriorityToDo(state) {
-  return state.listPriorityToDo;
+  return state.listToDo.filter((item) => item.isPriority);
 }
